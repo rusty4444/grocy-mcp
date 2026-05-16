@@ -1,0 +1,41 @@
+You are validating a new Grocy MCP server implementation before publication.
+
+Repository: this checkout of grocy-mcp
+Implemented tool surface:
+- grocy_system_info
+- grocy_list_products(active_only, limit, offset)
+- grocy_search_products(query, limit, offset)
+- grocy_get_product(product_id)
+- grocy_lookup_product_by_barcode(barcode)
+- grocy_stock_overview(include_zero_stock, limit, offset)
+- grocy_volatile_stock(limit, offset)
+- grocy_product_stock_details(product_id)
+- grocy_product_stock_entries(product_id, limit, offset)
+- grocy_common_entities()
+- grocy_list_shopping_lists(limit, offset)
+- grocy_list_shopping_list_items(list_id, include_done, limit, offset)
+- grocy_list_entity(entity, limit, offset)
+- grocy_get_entity_object(entity, object_id)
+- grocy_create_entity_object(entity, payload_json)
+- grocy_update_entity_object(entity, object_id, payload_json)
+- grocy_add_stock(product_id, amount, best_before_date, price, location_id)
+- grocy_consume_stock(product_id, amount, spoiled, location_id)
+- grocy_inventory_product(product_id, new_amount, best_before_date, location_id)
+- grocy_add_product_to_shopping_list(product_id, product_amount, list_id, note)
+- grocy_remove_product_from_shopping_list(product_id, product_amount, list_id)
+
+Implementation notes:
+- Python 3.11 package using mcp.server.fastmcp.FastMCP.
+- All tool params use typing.Annotated + pydantic.Field descriptions.
+- Client sends GROCY-API-KEY header when provided.
+- GROCY_BASE_URL can include or omit /api.
+- Mutation endpoints normalise empty/non-JSON responses.
+- Tests already passing locally: ruff check, pytest, MCP stdio tools/list schema validation, and live read-only calls against https://demo.grocy.info.
+- Write tools are not run against the public demo; client write payloads are mocked with respx.
+- README documents Grocy API 4.6.0 validation.
+
+Evaluate market/implementation fit and correctness. Return exactly:
+1. VERDICT: PASS or FAIL
+2. BLOCKERS: bullet list, or None
+3. NON-BLOCKING IMPROVEMENTS: up to 5 bullets
+4. PUBLICATION CONFIDENCE: 0-100
