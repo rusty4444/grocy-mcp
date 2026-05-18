@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.rusty4444/grocy-mcp",
-  "title": "Grocy MCP",
+  "name": "io.github.rusty4444/hermes-grocy-mcp",
+  "title": "Hermes Grocy MCP",
   "description": "MCP server for Grocy household ERP inventory and shopping workflows.",
   "version": "0.2.1",
   "websiteUrl": "https://github.com/rusty4444/grocy-mcp",
@@ -13,7 +13,7 @@
     {
       "registryType": "pypi",
       "registryBaseUrl": "https://pypi.org",
-      "identifier": "grocy-mcp",
+      "identifier": "hermes-grocy-mcp",
       "version": "0.2.1",
       "runtimeHint": "uvx",
       "transport": {
