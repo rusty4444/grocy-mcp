@@ -1,6 +1,6 @@
 # Grocy MCP
 
-<!-- mcp-name: io.github.rusty4444/grocy-mcp -->
+<!-- mcp-name: io.github.rusty4444/hermes-grocy-mcp -->
 
 A Model Context Protocol (MCP) server for [Grocy](https://grocy.info/), the self-hosted household ERP for groceries, inventory, chores, batteries, recipes, tasks, and shopping lists.
 
