@@ -1,0 +1,47 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.rusty4444/grocy-mcp",
+  "title": "Grocy MCP",
+  "description": "MCP server for Grocy household ERP inventory and shopping workflows.",
+  "version": "0.2.1",
+  "websiteUrl": "https://github.com/rusty4444/grocy-mcp",
+  "repository": {
+    "url": "https://github.com/rusty4444/grocy-mcp",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "pypi",
+      "registryBaseUrl": "https://pypi.org",
+      "identifier": "grocy-mcp",
+      "version": "0.2.1",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "GROCY_BASE_URL",
+          "description": "Grocy base URL, with or without /api",
+          "isRequired": false,
+          "isSecret": false,
+          "placeholder": "https://demo.grocy.info"
+        },
+        {
+          "name": "GROCY_API_KEY",
+          "description": "Grocy API key for private instances or write access",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "github": {
+        "owner": "rusty4444",
+        "repo": "grocy-mcp"
+      }
+    }
+  }
+}
